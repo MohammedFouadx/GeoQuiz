@@ -5,7 +5,13 @@ import sim.coder.androidchallengeno8.R
 
 class QuizViewModel : ViewModel(){
     var currentIndex = 0
-    private val questionBank = arrayListOf(
+
+    val  questionBank= mutableListOf<Question>(
+
+    )
+
+
+      val equestionBank = arrayListOf(
         Question(R.string.eFirst,false,""),
         Question(R.string.eSecound,false,""),
         Question(R.string.eThird,true,""),
@@ -14,19 +20,19 @@ class QuizViewModel : ViewModel(){
         Question(R.string.eSix,true,"")
     )
 
-    private val mQuestionBank= listOf(
+     val mQuestionBank= arrayListOf(
         Question(R.string.mFirst,true,""),
-        Question(R.string.mSecound,true,""),
-        Question(R.string.mThird,true,""),
+        Question(R.string.mSecound,false,""),
+        Question(R.string.mThird,false,""),
         Question(R.string.mFour,true,""),
-        Question(R.string.mFive,true,""),
-        Question(R.string.mSix,true,"")
+        Question(R.string.mFive,false,""),
+        Question(R.string.mSix,false,"")
     )
 
-    private val dQuestionBank = listOf(
+     val dQuestionBank = arrayListOf(
         Question(R.string.dFirst,true,""),
         Question(R.string.dSecound,true,""),
-        Question(R.string.dThird,true,""),
+        Question(R.string.dThird,false,""),
         Question(R.string.dFour,true,""),
         Question(R.string.dFive,true,""),
         Question(R.string.dSix,true,"")

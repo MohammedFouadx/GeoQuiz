@@ -15,7 +15,10 @@ import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
+import sim.coder.androidchallengeno8.Model.Question
 import sim.coder.androidchallengeno8.Model.QuizViewModel
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     val quizViewModel: QuizViewModel by lazy{
@@ -33,28 +36,40 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        var eListQuesation= arrayListOf<Question>()
+        eListQuesation.addAll(quizViewModel.equestionBank)
+        var mListQuestion=arrayListOf<Question>()
+        mListQuestion.addAll(quizViewModel.mQuestionBank)
+        var dListQuestion=arrayListOf<Question>()
+        dListQuestion.addAll(quizViewModel.dQuestionBank)
+        randomQuestions(eListQuesation)
+        randomQuestions(mListQuestion)
+        randomQuestions(dListQuestion)
+
 
         var currentCheat = 3
         tv_cheat.setOnClickListener {
 
-            if (currentCheat <=3 && currentCheat!=0) {  // Can use also (!(tokens > 3 || tokens == 0))
+            if (currentCheat <=3 && currentCheat!=0) {
                 currentCheat -= 1
-                makeText(this, "الفرص المتبقية لديك $currentCheat", LENGTH_SHORT).show()
+                makeText(this, "Your remaining opportunities $currentCheat", LENGTH_SHORT).show()
                 //Log.d( "", "TOKENS $currentCheat")
                 val answerIsTrue = quizViewModel.currentQuestionAnswer
                 val intent = Intent(this,CheatActivity::class.java)
                 intent.putExtra("a",answerIsTrue)
-                startActivityForResult(intent, 0)}
+                startActivity(intent)
+                //startActivityForResult(intent, 0)
+            }
 
             else { tv_cheat.isClickable= false
-                makeText(this, "Oh well, you are out of cheats", LENGTH_SHORT).show() }
+                makeText(this, "Oops!, You have no chances left", LENGTH_SHORT).show() }
         }
-
 
 
 //        val apiLevel = Build.VERSION.SDK_INT
 //        //val versionRelease = Build.VERSION.RELEASE
 //        tv_Api.text = "API Level : $apiLevel"
+
 
         trueButton = findViewById(R.id.t_button)
         falseButton = findViewById(R.id.f_button)
@@ -154,6 +169,19 @@ class MainActivity : AppCompatActivity() {
             trueButton.isClickable = false
             falseButton.isClickable = false
             Toast.makeText(this, "OOps! false", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    fun randomQuestions(list: ArrayList<Question>){
+        var random = Random()
+        for (i in 1..2){
+            var randIndex=random.nextInt(list.size)
+            var randItem:Question=list.get(randIndex)
+
+            quizViewModel.questionBank.add(randItem)
+            list.remove(list[randIndex])
+
         }
     }
 

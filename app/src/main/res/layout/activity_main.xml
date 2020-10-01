@@ -37,8 +37,8 @@
         android:hint="Text will appear here"
         android:gravity="center"
         android:textSize="18sp"
-        android:textColor="#ffffff"
-        android:background="#0097A7"
+        android:textColor="#0097A7"
+        android:background="@drawable/tv_shape"
         android:layout_margin="5dp"
         android:textStyle="bold">
 
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/nextfalsebutton"
+            android:background="@drawable/btn_shape"
             android:textColor="#ffffff"
 
             android:textStyle="bold"
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@color/nexttruebutton"
+            android:background="@drawable/btn_shapet"
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:text="@string/true_button"/>
@@ -111,6 +111,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/tv_shape"
             android:text="Do you want help?"/>
         <TextView
             android:id="@+id/tv_cheat"
@@ -118,6 +119,7 @@
             android:layout_height="wrap_content"
             android:text="Cheat!"
             android:textColor="#D32F2F"
+            android:background="@drawable/tv_shape"
             android:layout_marginLeft="5dp"/>
 
 
