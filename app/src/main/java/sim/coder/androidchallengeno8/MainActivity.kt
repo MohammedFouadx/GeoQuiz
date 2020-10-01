@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var questionTextView: TextView
     var trueAnswer=0
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -49,6 +50,8 @@ class MainActivity : AppCompatActivity() {
 
         var currentCheat = 3
         tv_cheat.setOnClickListener {
+
+            quizViewModel.isCheater
 
             if (currentCheat <=3 && currentCheat!=0) {
                 currentCheat -= 1
@@ -123,14 +126,21 @@ class MainActivity : AppCompatActivity() {
 
         trueButton.setOnClickListener {
             checkAnswer(true)
-            tv_Result.text="Your score is : "+trueAnswer.toString()
+            if (quizViewModel.isCheater==true){
+
+            }else
+                tv_Result.text="Your score is : "+trueAnswer.toString()
 
         }
 
 
         falseButton.setOnClickListener {
             checkAnswer(false )
-            tv_Result.text="your score is : "+trueAnswer.toString()
+            if (quizViewModel.isCheater==true){
+
+            }else
+
+                tv_Result.text="Your score is : "+trueAnswer.toString()
         }
 
 
@@ -159,16 +169,16 @@ class MainActivity : AppCompatActivity() {
 
         val correctAnswer = quizViewModel.currentQuestionAnswer
         if (correctAnswer == userAnswer) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
             quizViewModel.isAnswered("1")
             trueButton.isClickable = false
             falseButton.isClickable = false
-            trueAnswer++
+            trueAnswer+=quizViewModel.currentScore
+            makeText(this, "Correct!", LENGTH_SHORT).show()
         } else {
             quizViewModel.isAnswered("1")
             trueButton.isClickable = false
             falseButton.isClickable = false
-            Toast.makeText(this, "OOps! false", Toast.LENGTH_SHORT).show()
+            makeText(this, "OOps! false", LENGTH_SHORT).show()
         }
     }
 
