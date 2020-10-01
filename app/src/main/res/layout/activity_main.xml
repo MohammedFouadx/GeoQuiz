@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_Api"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="100dp"-->
+<!--        android:layout_marginEnd="100dp"-->
+<!--        android:gravity="center"-->
+
+<!--        />-->
+
+
+    <TextView
+        android:id="@+id/tv_Result"
+        android:layout_marginRight="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Score : 0"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/q_textview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Text will appear here"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:background="#0097A7"
+        android:layout_margin="5dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+
+
+
+
+        <ImageButton
+            android:id="@+id/prev_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"/>
+
+        <Button
+            android:id="@+id/f_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/nextfalsebutton"
+            android:textColor="#ffffff"
+
+            android:textStyle="bold"
+            android:text="@string/false_button"/>
+
+
+
+
+        <Button
+            android:id="@+id/t_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/nexttruebutton"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="@string/true_button"/>
+
+        <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you want help?"/>
+        <TextView
+            android:id="@+id/tv_cheat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cheat!"
+            android:textColor="#D32F2F"
+            android:layout_marginLeft="5dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
