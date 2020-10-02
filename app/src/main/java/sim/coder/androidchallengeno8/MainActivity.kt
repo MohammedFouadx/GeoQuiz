@@ -1,16 +1,12 @@
 package sim.coder.androidchallengeno8
 
-import android.app.Activity
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
 import androidx.lifecycle.ViewModelProviders
@@ -86,6 +82,7 @@ class MainActivity : AppCompatActivity() {
             if (quizViewModel.currentIndex==0){
                 quizViewModel.currentIndex=( quizViewModel.currentIndex + 5)
             }
+
             //quizViewModel.moveToPrev()
             if (quizViewModel.prevQuestion!=""){
                 trueButton.isClickable=false
@@ -126,19 +123,14 @@ class MainActivity : AppCompatActivity() {
 
         trueButton.setOnClickListener {
             checkAnswer(true)
-            if (quizViewModel.isCheater==true){
+            tv_Result.text="Your score is : "+trueAnswer.toString()
 
-            }else
-                tv_Result.text="Your score is : "+trueAnswer.toString()
 
         }
 
 
         falseButton.setOnClickListener {
             checkAnswer(false )
-            if (quizViewModel.isCheater==true){
-
-            }else
 
                 tv_Result.text="Your score is : "+trueAnswer.toString()
         }
@@ -183,14 +175,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun randomQuestions(list: ArrayList<Question>){
+    fun randomQuestions(question: ArrayList<Question>){
         var random = Random()
         for (i in 1..2){
-            var randIndex=random.nextInt(list.size)
-            var randItem:Question=list.get(randIndex)
+            var randIndex=random.nextInt(question.size)
+            var randItem:Question=question.get(randIndex)
 
             quizViewModel.questionBank.add(randItem)
-            list.remove(list[randIndex])
+            question.remove(question[randIndex])
 
         }
     }
@@ -199,28 +191,28 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("", "onStart() called")
-    }
-    override fun onResume() {
-        super.onResume()
-        Log.d("", "onResume() called")
-    }
-    override fun onPause() {
-        super.onPause()
-        Log.d("", "onPause() called")
-    }
-
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("", "onStop() called")
-    }
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("", "onDestroy() called")
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("", "onStart() called")
+//    }
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("", "onResume() called")
+//    }
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("", "onPause() called")
+//    }
+//
+//
+//    override fun onStop() {
+//        super.onStop()
+//        Log.d("", "onStop() called")
+//    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        Log.d("", "onDestroy() called")
+//    }
 
 
 

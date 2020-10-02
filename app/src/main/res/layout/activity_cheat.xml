@@ -14,7 +14,7 @@
         android:id="@+id/cheatAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CorrectAnswer"
+        android:text="@string/correctAnswer"
         android:background="@drawable/tv_shape"
         />
 

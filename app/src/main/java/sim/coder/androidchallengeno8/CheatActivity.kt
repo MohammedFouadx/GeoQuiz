@@ -11,6 +11,8 @@ class CheatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cheat)
 
+
+
         val bundle:Bundle? = intent.extras
        val msg =  bundle?.getString("a")
         cheatAnswer.text= msg

@@ -8,9 +8,14 @@
     <string name="next">NEXT</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
+    <string name="correctAnswer">CorrectAnswer</string>
+    <string name="score">Score : 0</string>
+    <string name="textQuestion">Text will appear here</string>
+    <string name="textHelp">Do you want help?</string>
+    <string name="cheat">Cheat!</string>
 
 
-    /// Questions /////////////
+    /// Easy Questions /////////////
 
 
     <string name="eFirst"> The Channel Tunnel is the longest rail tunnel in the world?   </string>
@@ -20,6 +25,7 @@
     <string name="eFive"> There are more than 100 bridges over the Amazon River?   </string>
     <string name="eSix"> Can any one see the moon?   </string>
 
+    /// Medium Questions ///////////////
 
     <string name="mFirst">the five rings on the Olympic flag are interlocking?</string>
     <string name="mSecound">Mount Kilimanjaro is the highest mountain in the world?</string>
@@ -28,6 +34,9 @@
     <string name="mFive">Sydney is the capital of Australia?</string>
     <string name="mSix">the Penny Black is an old-fashioned coin?</string>
 
+
+
+    /// difficult Questions ////////////////
 
     <string name="dFirst">Glastonbury had been due to celebrate its 50th anniversary in June before the festival was cancelled?</string>
     <string name="dSecound">Will.i.am is the only mentor to have appeared on every single series of The Voice UK?</string>

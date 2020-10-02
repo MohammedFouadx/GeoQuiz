@@ -1,6 +1,5 @@
 package sim.coder.androidchallengeno8.Model
 
-import android.renderscript.Sampler
 import androidx.lifecycle.ViewModel
 import sim.coder.androidchallengeno8.R
 
@@ -53,6 +52,7 @@ class QuizViewModel : ViewModel(){
         get() =questionBank[currentIndex].score
     var isCheater:Boolean
         get() = questionBank[currentIndex].isCheater
+
         set(value) {
             questionBank[currentIndex].isCheater=true
         }
@@ -71,7 +71,6 @@ class QuizViewModel : ViewModel(){
     fun isAnswered(state:String){
         questionBank[currentIndex].answered=state
     }
-
 
 
 }
