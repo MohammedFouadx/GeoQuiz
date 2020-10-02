@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".CheatActivity">
 
 
@@ -17,6 +18,17 @@
         android:text="@string/correctAnswer"
         android:background="@drawable/tv_shape"
         />
+
+    <Button
+        android:id="@+id/btn_showAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/showAnswer"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shapet"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
 
 
 

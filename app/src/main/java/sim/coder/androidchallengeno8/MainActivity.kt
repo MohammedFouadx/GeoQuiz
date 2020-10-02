@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nextButton: ImageButton
     private lateinit var prevButton: ImageButton
     private lateinit var questionTextView: TextView
+    private  var currentCheat = 3
     var trueAnswer=0
 
 
@@ -44,24 +45,9 @@ class MainActivity : AppCompatActivity() {
         randomQuestions(dListQuestion)
 
 
-        var currentCheat = 3
+
         tv_cheat.setOnClickListener {
-
-            quizViewModel.isCheater
-
-            if (currentCheat <=3 && currentCheat!=0) {
-                currentCheat -= 1
-                makeText(this, "Your remaining opportunities $currentCheat", LENGTH_SHORT).show()
-                //Log.d( "", "TOKENS $currentCheat")
-                val answerIsTrue = quizViewModel.currentQuestionAnswer
-                val intent = Intent(this,CheatActivity::class.java)
-                intent.putExtra("a",answerIsTrue)
-                startActivity(intent)
-                //startActivityForResult(intent, 0)
-            }
-
-            else { tv_cheat.isClickable= false
-                makeText(this, "Oops!, You have no chances left", LENGTH_SHORT).show() }
+            Cheater()
         }
 
 
@@ -185,6 +171,23 @@ class MainActivity : AppCompatActivity() {
             question.remove(question[randIndex])
 
         }
+    }
+
+
+    fun Cheater(){
+        if (currentCheat <=3 && currentCheat!=0) {
+            currentCheat -= 1
+            makeText(this, "Your remaining opportunities $currentCheat", LENGTH_SHORT).show()
+            //Log.d( "", "TOKENS $currentCheat")
+            val answerIsTrue = quizViewModel.currentQuestionAnswer
+            val intent = Intent(this,CheatActivity::class.java)
+            intent.putExtra("a",answerIsTrue)
+            startActivity(intent)
+            //startActivityForResult(intent, 0)
+        }
+
+        else { tv_cheat.isClickable= false
+            makeText(this, "Oops!, You have no chances left", LENGTH_SHORT).show() }
     }
 
 

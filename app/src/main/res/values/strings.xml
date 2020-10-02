@@ -13,6 +13,7 @@
     <string name="textQuestion">Text will appear here</string>
     <string name="textHelp">Do you want help?</string>
     <string name="cheat">Cheat!</string>
+    <string name="showAnswer">Show Answer</string>
 
 
     /// Easy Questions /////////////
