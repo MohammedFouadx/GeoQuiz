@@ -8,7 +8,8 @@
     <string name="next">NEXT</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
-    <string name="correctAnswer">CorrectAnswer</string>
+    <string name="correctAnswer">If you cheat, there will be no score for this question
+    Are you sure to do this?</string>
     <string name="score">Score : 0</string>
     <string name="textQuestion">Text will appear here</string>
     <string name="textHelp">Do you want help?</string>

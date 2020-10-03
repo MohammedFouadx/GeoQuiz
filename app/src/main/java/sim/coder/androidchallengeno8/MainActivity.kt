@@ -179,9 +179,9 @@ class MainActivity : AppCompatActivity() {
             currentCheat -= 1
             makeText(this, "Your remaining opportunities $currentCheat", LENGTH_SHORT).show()
             //Log.d( "", "TOKENS $currentCheat")
-            val answerIsTrue = quizViewModel.currentQuestionAnswer
+            //val answerIsTrue = quizViewModel.currentQuestionAnswer
             val intent = Intent(this,CheatActivity::class.java)
-            intent.putExtra("a",answerIsTrue)
+            //intent.putExtra("answer",answerIsTrue)
             startActivity(intent)
             //startActivityForResult(intent, 0)
         }
